@@ -11,6 +11,7 @@ This project is the starting point for a master's thesis focused on evaluating a
 - `finetining_dataset/` → Resources for future fine-tuning (the file `CAMPANAR_NET.vtt` is the clean version of the downloaded subtitles of the episode used for fine-tuning).
 - `Resum d'errors.xlsx` → the excel file with the summary of annotated errors by the moment
 - `SUBS_FOR_LABELLING.csv` → the dataset used for annotation
+- `LABEL STUDIO TEMPLATE.html` → the labelling template used for annotation
 
 ## 🛠 **Materials and Methods**
 
