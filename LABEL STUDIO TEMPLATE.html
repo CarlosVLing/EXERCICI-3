@@ -1,0 +1,54 @@
+<View>
+  <Header value="Revisa els subtítols"/>
+
+  <!-- Subtítol generat -->
+  <View style="display: flex; justify-content: space-between;">
+    <View style="width: 48%;">
+      <Header value="Subtítol generat"/>
+      <Text name="auto_subs" value="$automatic_subtitles"/>
+    </View>
+  </View>
+
+  <!-- Pas 1: Selecciona els errors -->
+  <Header value="Pas 1: Selecciona els errors"/>
+  <View style="display: flex; justify-content: space-between;">
+    <View style="width: 48%;">
+      <!-- Creación de regiones sobre el subtítulo generado -->
+      <Labels name="errors_auto" toName="auto_subs" selectionStyle="background" perRegion="true">
+        <Label value="Error" background="red"/>
+        <Label value="Fragment omés" background="blue"/>
+        <Label value="Exempt" background="yellow"/>
+      </Labels>
+    </View>
+  </View>
+
+  <!-- Pas 2: Classifica els errors (siempre visible) -->
+  <Header value="Pas 2: Classifica els errors"/>
+  <View style="display: flex; justify-content: space-between;">
+    <View style="width: 48%;">
+      <Choices name="error_type_auto" toName="auto_subs" choice="single" perRegion="true">
+        <Choice value="Al·lucinació"/>
+        <Choice value="Error"/>
+        <Choice value="Inadaptació dialectològica"/>
+        <Choice value="Fragment omés"/>
+      <Choice value="Idioma Incorrecte"/></Choices>
+    </View>
+  </View>
+
+  <!-- Pas 3: Selecciona la versió correcta (siempre visible) -->
+  <Header value="Pas 3: Selecciona la versió correcta"/>
+  <View style="display: flex; justify-content: space-between;">
+    <View style="width: 48%;">
+      <Header value="Subtítol Original"/>
+      <Text name="orig_subs" value="$original_subtitles" granularity="word"/>
+      <Labels name="selected_correction" toName="orig_subs" selectionStyle="background" perRegion="true">
+        <Label value="Selecció Correcta" background="green"/>
+      </Labels>
+      <Choices name="correct_version_auto" toName="auto_subs" choice="single" perRegion="true">
+        <Choice value="Seleccionar del original"/>
+        <Choice value="Escriure manualment"/>
+      </Choices>
+      <TextArea name="manual_correction_auto" toName="auto_subs" editable="true"/>
+    </View>
+  </View>
+</View>
